@@ -1,9 +1,6 @@
-/*
- * Use this CSS to learn some intersting techniques,
- * in case you're wondering how I built the UI.
- * Have fun! 😁
- */
-
+:root {
+  --gutter: 15px;
+}
 * {
   margin: 0;
   padding: 0;
@@ -83,6 +80,7 @@ nav {
   color: #777;
 }
 
+
 /* MAIN */
 .app {
   position: relative;
@@ -92,7 +90,7 @@ nav {
   grid-template-columns: 4fr 3fr;
   grid-template-rows: auto repeat(3, 15rem) auto;
   gap: 2rem;
-
+  
   /* NOTE This creates the fade in/out anumation */
   opacity: 0;
   transition: all 1s;
@@ -294,4 +292,121 @@ h2 {
 
 .timer {
   font-weight: 600;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.row > div {
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center !important;
+}
+
+.col-3 {
+  width: calc(25% - var(--gutter));
+}
+
+.col-4 {
+  width: calc(33.33% - var(--gutter));
+}
+
+.col-6 {
+  width: calc(25% - var(--gutter));
+}
+
+.col-12 {
+  width: calc(100% - var(--gutter));
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    max-width: 100%;
+  }
+  
+  .col-lg-3 {
+    width: calc(25% - var(--gutter));
+  }
+  
+  .col-lg-4 {
+    width: calc(33.33% - var(--gutter));
+  }
+  
+  .col-lg-6 {
+    width: calc(25% - var(--gutter));
+  }
+  
+  .col-lg-12 {
+    width: calc(100% - var(--gutter));
+  }
+
+  .app {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .col-lg-3 {
+    width: calc(25% - var(--gutter));
+  }
+  
+  .col-md-4 {
+    width: calc(33.33% - var(--gutter));
+  }
+  
+  .col-md-6 {
+    width: calc(25% - var(--gutter));
+  }
+  
+  .col-md-12 {
+    width: calc(100% - var(--gutter));
+  }
+  nav {
+    align-items: center;
+  }
+  .login {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .col-sm-3 {
+    width: calc(25% - var(--gutter));
+  }
+  
+  .col-sm-4 {
+    width: calc(33.33% - var(--gutter));
+  }
+  
+  .col-sm-6 {
+    width: calc(25% - var(--gutter));
+  }
+  
+  .col-sm-12 {
+    width: calc(100% - var(--gutter));
+  }
+  nav {
+    align-items: center;
+  }
+  .login {
+    flex-direction: column;
+    align-items: center;
+  }
+  .summary {
+    flex-direction: column;
+    align-items: center;
+  }
 }
